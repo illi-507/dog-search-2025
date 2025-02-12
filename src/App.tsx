@@ -21,9 +21,10 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
+            
       <div className="app-header">
         <h1>Dog Search🐶</h1>
-        © {new Date().getFullYear()} Xingjian Wang. All rights reserved.
+       
       </div>
       <Router>
         <Routes>
@@ -38,6 +39,10 @@ const App: React.FC = () => {
 
         </Routes>
       </Router>
+
+      <div className="app-footer">
+        <span>© {new Date().getFullYear()} Xingjian Wang. All rights reserved.</span>
+      </div>
     </div>
   );
 };
