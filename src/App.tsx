@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./component/Login";
 import DogSearch from "./component/DogSearch";
 import FavoriteList from "./component/FavoriteList";
