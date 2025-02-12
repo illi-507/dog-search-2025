@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./component/Login";
+import DogSearch from "./component/DogSearch";
+import FavoriteList from "./component/FavoriteList";
 import './App.css';
 
-function App() {
+
+type UserInfo = { name: string; email: string };
+
+const App: React.FC = () => {
+  const [authenticated, setAuthenticated] = useState<boolean>(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '' });
+  
+  const [fetchedDogs, setFetchedDogs] = useState<any[]>([]);
+
+  const toggleFavorite = (id: string) => {
+    setFavorites(prev => prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="app-header">
+        <h1>Dog Search🐶</h1>
+        © {new Date().getFullYear()} Xingjian Wang. All rights reserved.
+      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={authenticated ? <Navigate to="/search" /> : <Login onLogin={() => setAuthenticated(true)} setUserInfo={setUserInfo} />} />
+          <Route path="/search" element={authenticated ?
+            <DogSearch 
+            fetchedDogs={fetchedDogs}
+            setFetchedDogs={setFetchedDogs}
+            userInfo={userInfo} onLogout={() => setAuthenticated(false)} favorites={favorites} toggleFavorite={toggleFavorite} />
+            : <Navigate to="/" />} />
+          <Route path="/favorites" element={authenticated ? <FavoriteList favorites={favorites} toggleFavorite={toggleFavorite} /> : <Navigate to="/" />} />
+
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
