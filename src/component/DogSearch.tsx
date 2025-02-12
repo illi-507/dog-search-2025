@@ -181,23 +181,34 @@ const DogSearch: React.FC<{
               </select>
             </div>
   
-            {/* Search Button at the Bottom */}
             <button className="search-button" onClick={fetchDogs} style={{ marginTop: "10px", padding: "8px", fontSize: "16px" }}>
               Search
+            </button>
+            <button className="search-button" onClick={()=>{
+               setDogs([]);
+               setFetchedDogs([]);
+               setLoading(false);
+            }} style={{ marginTop: "10px", padding: "8px", fontSize: "16px" }}>
+              Clear Search
             </button>
           </div>
   
   
           <div className="dog-search-result-container">
+            
             {loading ? (
               <div className="loading-container">
                 <div className="spinner"></div>
               </div>
             ) : (
               <>
-                <h2 style={{marginLeft: "40px"}}>Results</h2>
-                {dogs.length > 0 &&
+               
+                {dogs.length === 0 ?
+                  <div className='welcome-container'>
+                      <h3>Edit your search options and start a search...</h3>
+                  </div>:
                   <>
+                   <h2 style={{marginLeft: "40px"}}>Results</h2>
                     <ul>
                       {dogs.slice((currentPage - 1) * dogsPerPage, currentPage * dogsPerPage).map(dog => (
                         <div key={dog.id}>
