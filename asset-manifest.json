@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dog-search-2025/static/css/main.b9f01028.css",
+    "main.js": "/dog-search-2025/static/js/main.930e217d.js",
+    "static/js/453.7525f151.chunk.js": "/dog-search-2025/static/js/453.7525f151.chunk.js",
+    "index.html": "/dog-search-2025/index.html",
+    "main.b9f01028.css.map": "/dog-search-2025/static/css/main.b9f01028.css.map",
+    "main.930e217d.js.map": "/dog-search-2025/static/js/main.930e217d.js.map",
+    "453.7525f151.chunk.js.map": "/dog-search-2025/static/js/453.7525f151.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9f01028.css",
+    "static/js/main.930e217d.js"
+  ]
+}
