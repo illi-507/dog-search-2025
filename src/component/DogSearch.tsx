@@ -130,7 +130,7 @@ const DogSearch: React.FC<{
   
         <div className="dog-search-content-container">
           <div className="dog-search-option-container" >
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", alignItems: "center", rowGap: "10px" }}>
+            <div className='dog-search-grid'>
               <label>Breed:</label>
               <select onChange={(e) => setSelectedBreed(e.target.value)} value={selectedBreed}>
                 <option value="">All Breeds</option>

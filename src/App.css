@@ -61,9 +61,9 @@
 }
 
 .logout-button{
-  border: none;  /* Removes border */
-  background: none;  /* Removes background color */
-  cursor: pointer;  /* Ensures it's clickable */
+  border: none; 
+  background: none; 
+  cursor: pointer;  
   font-size: 20px;
   padding:0;
   border: 2px solid #74b9ff;
@@ -87,17 +87,17 @@
 }
 
 .view-favorite-button:hover {
-  outline: 2px solid #0abde3; /* Outline thickness change without affecting layout */
+  outline: 2px solid #0abde3; 
 }
 
 .logout-button:hover {
-  outline: 2px solid #0abde3; /* Outline thickness change without affecting layout */
+  outline: 2px solid #0abde3; 
 }
 
 .search-button{
-  border: none;  /* Removes border */
-  background: none;  /* Removes background color */
-  cursor: pointer;  /* Ensures it's clickable */
+  border: none;  
+  background: none; 
+  cursor: pointer;  
   font-size: 20px;
   padding:0;
   border: 2px solid #74b9ff;
@@ -107,16 +107,22 @@
 }
 
 .search-button:hover {
-  outline: 2px solid #0abde3; /* Outline thickness change without affecting layout */
+  outline: 2px solid #0abde3;
 }
 
 
+.dog-search-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  row-gap: 10px;
+}
 .dog-search-content-container{
   display: flex;  
 }
 
-.dog-search-option-container{
-  width: 30%;
+.dog-search-option-container{  
+  min-width: 400px;
 }
 
 .dog-search-result-container{
@@ -138,11 +144,11 @@
   margin: 10px; 
   display: flex;
   flex-direction: column;
-  align-items: start; /* Align text items normally */
+  align-items: start; 
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 200px; /* Adjust width as needed */
+  width: 200px; 
 }
 
 .dog-name{
@@ -152,16 +158,16 @@
 .dog-favorite-button {
   width: 100px;
   height: 30px;
-  border: none;  /* Removes border */
-  background: none;  /* Removes background color */
-  cursor: pointer;  /* Ensures it's clickable */
+  border: none;  
+  background: none;  
+  cursor: pointer;  
   font-size: 15px;
   background-color: yellow;
 
   border-radius: 15px;
   padding: 3px; 
-  margin-top: auto; /* Pushes button to the bottom */
-  align-self: flex-start; /* Aligns button with other content */
+  margin-top: auto; 
+  align-self: flex-start; 
 }
 
 .pagination{
@@ -197,3 +203,24 @@
   width: 100%;
   height: 50vh;
 }
+
+.match-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-overlay-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;  
+}
+
+
